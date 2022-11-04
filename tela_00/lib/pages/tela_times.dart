@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tela_00/pages/home_controle.dart';
 
 import '../main.dart';
 import 'homePage.dart';
@@ -8,9 +9,10 @@ class MeuApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
     
-      home: Home()
+      home: HomeController(
+        child: Home())
     );
   }
 }
