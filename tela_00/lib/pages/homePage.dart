@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final names = ["Danilo", "Sarah", "Carol", "Pedro"];
      return  Scaffold(
      appBar: AppBar(
         title: Text("TRABALHO ")
@@ -56,25 +57,16 @@ class _HomePageState extends State<HomePage> {
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
-           child: SingleChildScrollView(
-             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                for(var i = 0; i < 10 ; i++)
-                Container(
-                  
-                  width: 80,
-                  height: 80,
-                  margin: const EdgeInsets.all(12),
-                  color: Colors.red,
-                  ),
-                 
-              ],
+           child: ListView.builder(
+              itemCount: names.length,
+              itemBuilder: (context, index){
+                final name = names[index];
+                return ListTile(
+                  title: Text(name),
+                );
+              }
              ),
-           )
-           
-     ),
+           ),
       floatingActionButton: FloatingActionButton(
        child: const Icon(Icons.add),
         onPressed: ( ) {
