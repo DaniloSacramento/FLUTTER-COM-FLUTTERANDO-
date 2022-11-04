@@ -12,7 +12,7 @@ class MeuApp extends StatelessWidget {
     return MaterialApp(
     
       home: HomeController(
-        child: Home())
+        child: HomePage())
     );
   }
 }
